@@ -25,8 +25,8 @@ h2{font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--amber)
 .texts .t{font-weight:600;font-size:18px;color:var(--navy);border:0}
 .texts .d{display:block;color:var(--gray);font-size:14px;margin-top:4px}
 .empty{padding:24px;background:#F6F7F9;border-radius:8px;color:var(--gray);font-size:16px}
-.about{display:block;margin-top:8px}.about img{width:100%;border-radius:6px;margin:0 0 28px;box-shadow:0 8px 30px rgba(30,43,58,.12)}
-.about img{width:100%;border-radius:8px;display:block}
+.about{display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:start;margin-top:8px}.about img{width:100%;border-radius:6px;display:block;border:1px solid #e6e2d8}
+@media(max-width:640px){.about{grid-template-columns:1fr}.about img{width:180px}}
 .about p{margin:0 0 16px}
 .issues{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px;margin-top:24px}.issue{margin:0}.issue img{width:100%;display:block;border:1px solid #d9d4c7;box-shadow:0 8px 30px rgba(30,43,58,.12);transition:transform .2s}.issue a:hover img{transform:translateY(-3px)}.issue figcaption{font-size:14px;color:var(--gray);margin-top:10px}.issues+.empty{margin-top:20px}
 .texts li{display:flex;gap:16px;align-items:flex-start}.texts .thumb img{width:72px;display:block;border:1px solid #d9d4c7}
