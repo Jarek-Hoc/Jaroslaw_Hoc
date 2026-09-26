@@ -24,7 +24,7 @@ header{border-bottom:1px solid var(--rule)}
 .latest .cta{margin:0 12px 0 0}.latest .more{font-size:15px;color:var(--gray);border:0;white-space:nowrap}
 .sub{margin:48px 0 0;padding:28px 32px;background:#F6F7F9;border-radius:10px;display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:center}
 .sub h4{margin:0 0 6px;font-size:20px;color:var(--navy)}.sub p{margin:0;font-size:15px;color:var(--gray)}
-.sub iframe{width:100%;height:120px;border:0;background:transparent}
+.sub iframe{width:100%;height:150px;border:0;background:transparent}
 @media(max-width:700px){.latest{grid-template-columns:1fr}.latest .paper{max-width:320px}.sub{grid-template-columns:1fr;padding:22px}}
 .hero h1{font-size:34px;line-height:1.2;color:var(--navy);margin:0 0 20px;font-weight:700;letter-spacing:-.3px}
 .hero p{font-size:19px;margin:0 0 14px;max-width:600px}
