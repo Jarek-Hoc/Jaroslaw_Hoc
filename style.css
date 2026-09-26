@@ -42,7 +42,7 @@ h2{font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--amber)
 .atext{max-width:680px}.atext p{font-size:18px;line-height:1.6}.about img{width:100%;border-radius:6px;display:block;border:1px solid #e6e2d8}
 @media(max-width:640px){.about{grid-template-columns:1fr}.about img{width:180px}}
 .about p{margin:0 0 16px}
-.issues{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px;margin-top:24px}.issue{margin:0}.issue img{width:100%;display:block;border:1px solid #d9d4c7;box-shadow:0 8px 30px rgba(30,43,58,.12);transition:transform .2s}.issue a:hover img{transform:translateY(-3px)}.issue figcaption{font-size:14px;color:var(--gray);margin-top:10px}.issues+.empty{margin-top:20px}
+.issues{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px;margin-top:24px}.issue{margin:0}.issue img{width:100%;display:block;border:1px solid #d9d4c7;box-shadow:0 8px 30px rgba(30,43,58,.12);transition:transform .2s}.issue a:hover img{transform:translateY(-3px)}.issue figcaption{font-size:14px;color:var(--gray);margin-top:10px}.issue figcaption em{color:var(--green);font-style:normal}.issues+.empty{margin-top:20px}
 .texts li{display:flex;gap:16px;align-items:flex-start}.texts .thumb img{width:72px;display:block;border:1px solid #d9d4c7}
 .empty{margin-bottom:8px}
 @media(max-width:640px){.hero{padding:44px 0 28px}.hero h1{font-size:28px}}
