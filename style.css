@@ -6,8 +6,9 @@ a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--amber)}a:
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
 header{border-bottom:1px solid var(--rule)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:16px;flex-wrap:wrap}
-.brand{font-weight:700;color:var(--navy);border:0;font-size:17px;letter-spacing:.2px}
-.brand span{color:var(--amber)}
+.brand{border:0;display:flex;flex-direction:column;line-height:1.2}
+.brand .pub{font-weight:700;color:var(--navy);font-size:19px;letter-spacing:-.2px}
+.brand .by{color:var(--amber);font-size:13px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;margin-top:3px}
 .menu{display:flex;gap:22px;align-items:center;font-size:15px}
 .menu a{border:0;color:var(--gray)}.menu a.on{color:var(--navy);font-weight:600}
 .lang{border:1px solid var(--rule);border-radius:999px;padding:3px 11px;font-size:13px;color:var(--gray)!important;font-weight:600}
