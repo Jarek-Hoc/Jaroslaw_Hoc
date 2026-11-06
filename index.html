@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Jarosław Hoc — Druga połowa problemu</title>
 <meta name="description" content="Techniczne rozwiązania zawodzą z powodów, które nie są techniczne. Teksty o tej drugiej połowie.">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Druga połowa problemu">
@@ -13,21 +16,276 @@
 <link rel="alternate" hreflang="pl" href="https://jaroslawhoc.pl/">
 <link rel="alternate" hreflang="en" href="https://jaroslawhoc.pl/about">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1791019325">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.png?v=1791019325" type="image/png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+:root{--navy:#14202E;--blue:#1F6FA8;--blueS:#8FB4CF;--green:#5BA847;--greenS:#A9D39A;--amber:#E9CF8F;--ink:#2B2F36;--gray:#6B7280;--line:#8A8F98;--rule:#DDD8CC;--paper:#FAF9F5;--serif:"Source Serif 4",Georgia,serif}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;color:var(--ink);font-family:Raleway,system-ui,sans-serif;font-size:17px;line-height:1.6;position:relative;overflow-x:hidden;
+  background-image:linear-gradient(rgba(20,32,46,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(20,32,46,.045) 1px,transparent 1px);background-size:44px 44px}
+a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--blue)}a:hover{color:var(--blue)}
+.page{max-width:1080px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+/* warstwa szkicu na całą stronę */
+.sketch{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.sketch svg{position:absolute;stroke:var(--line);fill:none;stroke-width:1}
+.sketch .bar{position:absolute;opacity:.75}.sketch .only-m{display:none}
+.sketch .note{position:absolute;font-family:var(--serif);font-weight:600;color:rgba(20,32,46,.55);line-height:1.05;padding:10px 12px;transform:rotate(-2deg);box-shadow:0 2px 6px rgba(0,0,0,.06)}
+.sketch .note small{display:block;font-weight:400;font-size:8px;line-height:1.3;margin-top:6px;opacity:.6}
+/* pasek górny */
+.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0 14px;border-bottom:2px solid var(--navy);gap:16px;flex-wrap:wrap;background:linear-gradient(var(--paper),rgba(250,249,245,.85))}
+.brand{display:flex;align-items:center;gap:14px;border:0}
+.brand img{height:54px}
+.brand b{display:block;font-family:var(--serif);font-size:21px;color:var(--navy);font-weight:600;line-height:1.15}
+.brand small{display:block;color:var(--green);font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase}
+.motto{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--navy)}
+.motto em{font-style:italic;color:var(--blue)}
+.lang{border:1px solid var(--rule);border-radius:999px;padding:3px 11px;font-size:12px;font-weight:700;color:var(--gray);margin-left:14px;font-style:normal;background:#fff}
+/* hero */
+.head{display:grid;grid-template-columns:1fr 1.7fr 1fr;gap:24px;align-items:center;padding:30px 0 0}
+.kick{font-family:var(--serif);font-size:22px;line-height:1.25;letter-spacing:1px;text-transform:uppercase;color:var(--blue);margin:0 0 16px;font-weight:600}
+.rulet{width:70%;height:3px;background:linear-gradient(90deg,var(--blue) 50%,var(--green) 50%);margin:0 0 16px}
+.head .left p{font-family:var(--serif);font-size:17px;margin:0}
+.portrait{position:relative}
+.portrait img{width:130%;margin-left:-15%;display:block;mix-blend-mode:multiply;
+  -webkit-mask-image:radial-gradient(ellipse 58% 62% at 46% 52%,#000 48%,transparent 100%);mask-image:radial-gradient(ellipse 58% 62% at 46% 52%,#000 48%,transparent 100%)}
+.qmark{font-family:var(--serif);font-size:64px;line-height:.6;color:var(--green);display:block;margin-bottom:6px}
+.head .right blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.45;color:var(--navy)}
+.sig{margin-top:22px;padding-top:16px;border-top:1px solid var(--rule)}
+.sig b{display:block;letter-spacing:2.5px;font-size:14px;color:var(--navy)}
+.sig span{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--gray)}
+/* nagłówek — mniejszy */
+.anchor{text-align:center;padding:6px 0 0}
+.anchor h1{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.4vw,38px);line-height:1.2;color:var(--navy);margin:0;letter-spacing:-.3px}
+.anchor h1 em{font-style:normal;color:var(--blue)}
+.byline{display:flex;align-items:center;gap:16px;justify-content:center;margin:16px 0 0;letter-spacing:4px;font-size:12px;color:var(--navy);font-weight:700}
+.byline:before,.byline:after{content:"";height:1px;width:110px;background:var(--line);opacity:.5}
+/* wstawka kluczowe + w praktyce */
+.grid{display:grid;grid-template-columns:1.6fr 1fr;gap:30px;margin-top:46px}
+.card{background:rgba(255,255,255,.92);border:1px solid var(--rule);position:relative;padding:0 26px 24px;box-shadow:0 10px 30px rgba(20,32,46,.06)}
+.lab{display:inline-block;background:var(--navy);color:#fff;font-size:12px;letter-spacing:2px;font-weight:700;padding:4px 10px;transform:translateY(-50%)}
+.keys{list-style:none;margin:2px 0 0;padding:0}
+.keys li{display:grid;grid-template-columns:46px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--rule)}
+.keys li:first-child{border:0;padding-top:4px}
+.num{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--navy);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;color:var(--navy);background:#fff}
+.keys li:nth-child(1) .num{box-shadow:inset 0 -12px 0 var(--blueS)}
+.keys li:nth-child(2) .num{box-shadow:inset 0 -12px 0 var(--greenS)}
+.keys li:nth-child(3) .num{box-shadow:inset 0 -12px 0 var(--amber)}
+.keys h3{margin:4px 0 4px;font-family:var(--serif);font-size:21px;font-weight:600;color:var(--navy);line-height:1.25}
+.keys p{margin:0;font-family:var(--serif);font-size:16px;line-height:1.5;color:var(--ink)}
+.keys .hint{display:block;font-family:Raleway,sans-serif;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--gray);margin-top:6px}
+.card h3.t{margin:0 0 8px;font-size:14px;letter-spacing:1.6px;text-transform:uppercase;color:var(--navy)}
+.card p.s{margin:0 0 6px;font-family:var(--serif);font-size:16px;line-height:1.5}
+.loop{display:block;margin:6px auto 0;width:100%;max-width:300px}
+.loop text{font-family:Raleway,sans-serif;font-weight:700;font-size:11px;letter-spacing:.8px;fill:var(--navy);text-anchor:middle}
+.loop .mid{font-family:var(--serif);font-size:17px;font-weight:600;letter-spacing:0;fill:#fff}
+.loop .lbl text{paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round}
+.loop .miss{font-family:var(--serif);font-style:italic;font-weight:400;font-size:12px;fill:#B5651D;letter-spacing:0}
+.ring{transform-box:fill-box;transform-origin:center;animation:spin 40s linear infinite}
+.dot{offset-path:path("M150 40 A80 80 0 0 1 150 200 A80 80 0 0 1 150 40");animation:run 8s linear infinite}
+.fill{stroke-dasharray:1;stroke-dashoffset:1;animation:close 8s linear infinite}
+.miss{animation:miss 8s linear infinite}
+.gear{transform-box:fill-box;transform-origin:center;animation:spin 18s linear infinite}.gear.r{animation-direction:reverse;animation-duration:12s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes run{to{offset-distance:100%}}
+@keyframes close{0%,55%{stroke-dashoffset:1;opacity:1}69%{stroke-dashoffset:0;opacity:1}92%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes miss{0%,55%{opacity:1}62%,94%{opacity:0}100%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.ring,.dot,.fill,.miss,.gear{animation:none}.dot{offset-distance:62%}}
+/* dół */
+.bottom{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:34px 0 0}
+.box{background:rgba(255,255,255,.92);border:1px solid var(--rule);padding:22px 26px}
+.box blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.4;color:var(--navy)}
+.box .src{display:block;text-align:right;margin-top:10px;letter-spacing:2px;font-size:12px;font-weight:700;color:var(--gray)}
+.box .lab{transform:none;margin-bottom:10px}
+.box p{margin:0;font-family:var(--serif);font-size:16px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:44px;padding-top:28px;border-top:2px solid var(--navy)}
+.about h2{font-size:13px;letter-spacing:2.4px;text-transform:uppercase;color:var(--blue);margin:0 0 12px}
+.next{background:var(--navy);color:#fff;padding:22px 26px}
+.next b{display:block;font-size:12px;letter-spacing:2px;color:#9fc6e6;margin-bottom:6px}
+.next span{font-family:var(--serif);font-size:22px;line-height:1.3}
+.next a{color:#fff;border-color:var(--green)}
+.contact p{font-family:var(--serif);font-size:17px;margin:0;background:rgba(250,249,245,.85)}
+footer{margin-top:50px;border-top:1px solid var(--rule);padding:22px 0 40px;color:var(--gray);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;background:rgba(250,249,245,.85)}
+footer .m{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--navy)}
+footer a{border:0;color:var(--gray)}
+
+/* infografika: gdzie gubi się druga połowa */
+.info{margin-top:40px;background:rgba(255,255,255,.94);border:1px solid var(--rule);padding:0 26px 26px;box-shadow:0 10px 30px rgba(20,32,46,.06)}
+.info>h2{font-family:var(--serif);font-weight:600;font-size:30px;color:var(--navy);margin:4px 0 6px;letter-spacing:-.3px;text-transform:none}
+.info>h2 em{font-style:normal;color:var(--blue)}
+.info>p.i{margin:0 0 20px;font-family:var(--serif);font-size:16px;max-width:760px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tile{border-radius:6px;padding:16px 16px 14px;border-top:4px solid var(--c)}
+.tile:nth-child(1){--c:var(--blue);background:#EEF4F9}.tile:nth-child(2){--c:#C99A2E;background:#FBF4E4}
+.tile:nth-child(3){--c:var(--navy);background:#F1F2F4}.tile:nth-child(4){--c:var(--green);background:#EFF6EC}
+.tile .n{display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--c);color:#fff;font-weight:700;font-size:14px;align-items:center;justify-content:center;margin-right:8px}
+.tile h4{display:flex;align-items:center;margin:0 0 8px;font-size:14px;letter-spacing:1.2px;text-transform:uppercase;color:var(--navy);line-height:1.25}
+.tile p{margin:0 0 10px;font-family:var(--serif);font-size:15px;line-height:1.45}
+.tile svg{display:block;width:100%;height:auto}
+.tile svg text{font-family:Raleway,sans-serif;font-size:9px;font-weight:700;letter-spacing:.6px;fill:#14202E;text-anchor:middle}
+.takeaway{display:grid;grid-template-columns:54px 1fr;gap:18px;align-items:center;margin-top:18px;padding:16px 20px;background:var(--navy);color:#fff;border-radius:6px}
+.takeaway .b{width:54px;height:54px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:24px;font-weight:600}
+.takeaway small{display:block;font-size:11px;letter-spacing:2px;color:#9fc6e6;font-weight:700;margin-bottom:2px}
+.takeaway span{font-family:var(--serif);font-size:19px;line-height:1.35}
+.takeaway em{font-style:normal;color:#A9D39A}
+.needle{transform-origin:60px 62px;animation:needle 4s ease-in-out infinite alternate}
+@keyframes needle{from{transform:rotate(-58deg)}to{transform:rotate(-8deg)}}
+.st{animation:neck 9s infinite}.st:nth-of-type(2){animation-delay:-6s}.st:nth-of-type(3){animation-delay:-3s}
+@keyframes neck{0%,30%{fill:#C99A2E}36%,100%{fill:#D9DCE1}}
+.flow{offset-path:path("M8 70 H112");animation:run 3s linear infinite}.flow.b{animation-delay:-1s}.flow.c{animation-delay:-2s}
+.doc{animation:doc 6s ease-in-out infinite}
+@keyframes doc{0%{transform:translateX(0)}15%,30%{transform:translateX(26px)}45%,60%{transform:translateX(52px)}75%,90%{transform:translateX(78px);opacity:1}100%{transform:translateX(78px);opacity:0}}
+.gate{animation:gate 6s infinite}.gate.g2{animation-delay:1.8s}.gate.g3{animation-delay:3.6s}
+@keyframes gate{0%,10%{fill:#B7BBC2}16%,40%{fill:#C0392B}50%,100%{fill:#B7BBC2}}
+.up{stroke-dasharray:1;stroke-dashoffset:1;animation:up 6s infinite}
+@keyframes up{0%{stroke-dashoffset:1}25%,100%{stroke-dashoffset:0}}
+.back{stroke-dasharray:1;stroke-dashoffset:1;animation:back 6s infinite}
+@keyframes back{0%,55%{stroke-dashoffset:1;opacity:1}80%,95%{stroke-dashoffset:0;opacity:1}100%{opacity:0}}
+.nope{animation:nope 6s infinite}@keyframes nope{0%,25%{opacity:0}30%,52%{opacity:1}56%,100%{opacity:0}}
+.yes{animation:yes 6s infinite}@keyframes yes{0%,78%{opacity:0}82%,96%{opacity:1}100%{opacity:0}}
+@media(max-width:900px){.tiles{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.tiles{grid-template-columns:1fr}.info>h2{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.needle,.st,.flow,.doc,.gate,.up,.back,.nope,.yes{animation:none}.up,.back{stroke-dashoffset:0}.yes{opacity:1}.nope{opacity:0}}
+@media(max-width:900px){
+  .head,.grid,.bottom,.about{grid-template-columns:1fr}
+  .portrait{max-width:440px;margin:0 auto}
+  .byline:before,.byline:after{width:40px}
+  .sketch .hide-m{display:none}.sketch .only-m{display:block}
+  .motto{order:3;width:100%}
+}
+</style>
 </head>
 <body>
-<header><div class="wrap nav">
-<a class="brand" href="./"><img class="logo" src="logo.png" alt="½ JH"><span><span class="pub">Druga połowa problemu</span><span class="by">Jarosław Hoc</span></span></a>
-<nav class="menu"><a href="about" class="lang" lang="en">EN</a></nav>
-</div></header>
-<main class="wrap">
-<section class="ahero"><img src="szkic-hero.jpg" alt="Jarosław Hoc – szkic inżynierski"><div class="acard"><h2>O mnie</h2><p>Ponad trzydzieści lat pracuję w produkcji ciągłej: procesy, media, energia, gospodarka wodna, systemy sterowania. Dziś kieruję procesami technologicznymi i energetycznymi w dużym zakładzie branży spożywczej.</p></div></section><div class="atext"><p>Wystarczająco długo, żeby zobaczyć ten sam wzór wiele razy. Rozwiązanie jest policzone, uzgodnione, zatwierdzone, i nie wchodzi. Albo wchodzi i nie daje tego, co miało dać. Przyczyna prawie nigdy nie leży po stronie techniki. Leży w tym, jak zbudowany jest system pomiaru, gdzie naprawdę stoi ograniczenie i co się opłaca ludziom, którzy mają to uruchomić.</p><p>To jest ta druga połowa problemu. Pierwszą umie policzyć każdy inżynier.</p><p>Teksty powstają na styku dwóch rzeczy: książek, które czytam po kolei i opisuję razem z tym, z czym się nie zgadzam, oraz mechanizmów, które widziałem w ruchu. Piszę o mechanizmie, nie o przypadku: bez nazw firm, zakładów, dostawców i ludzi, bez liczb bezwzględnych. Jeśli tekst nie kończy się jedną rzeczą do zrobienia w poniedziałek rano, nie jest skończony.</p><p>Publikuję po polsku i po angielsku. To nie są tłumaczenia. Wersja angielska odpowiada na inne pytanie.</p><p>Pierwszy tekst ukaże się 24 grudnia 2026 na <a href="https://jaroslawhoc.substack.com">Substacku</a>.</p></div><h2>Kontakt</h2><p>Najprościej mailem: <a href="mailto:kontakt@jaroslawhoc.pl">kontakt@jaroslawhoc.pl</a>. </p>
-</main>
-<footer class="wrap">
-<span>© 2026 Jarosław Hoc · Druga połowa problemu</span>
-<span><a href="mailto:kontakt@jaroslawhoc.pl">kontakt@jaroslawhoc.pl</a> · <a href="https://jaroslawhoc.substack.com">Substack</a></span>
-</footer>
+
+<!-- szkic inżynierski rozlany na całą stronę: kontynuacja motywów z portretu -->
+<div class="sketch" aria-hidden="true">
+  <!-- łuk i celownik nad portretem, wychodzące poza zdjęcie -->
+  <svg class="hide-m" style="left:calc(50% - 620px);top:60px" width="1240" height="560" viewBox="0 0 1240 560">
+    <path d="M150 520 A470 430 0 0 1 1090 520" stroke-dasharray="2 5" opacity=".55"/>
+    <path d="M80 120 H560" opacity=".5"/><path d="M80 112v16M560 112v16" opacity=".5"/>
+    <circle cx="1140" cy="80" r="16" opacity=".6"/><path d="M1116 80h48M1140 56v48" opacity=".6"/>
+    <path d="M1000 40h170M1000 50h120M1000 60h150" opacity=".45"/>
+    <path d="M30 40h120M30 50h90M30 60h110" opacity=".45"/>
+  </svg>
+  <!-- kolorowe słupki (niebieski/zielony) jak w szkicu -->
+  <div class="bar hide-m" style="right:calc(50% - 600px);top:520px;width:26px;height:240px;background:var(--blueS)"></div>
+  <div class="bar hide-m" style="right:calc(50% - 622px);top:520px;width:18px;height:240px;background:var(--greenS)"></div>
+  <!-- bursztynowe kartki -->
+  <div class="note hide-m" style="left:calc(50% - 660px);top:620px;width:120px;height:170px;background:var(--amber);opacity:.55"></div>
+  <div class="note hide-m" style="left:calc(50% - 700px);top:1180px;width:140px;font-size:16px;background:#EAD9AE;opacity:.8">DRUGA<br>POŁOWA<small>pomiar przepływ ograniczenie ludzie poniedziałek decyzja system wniosek</small></div>
+  <div class="note hide-m" style="right:calc(50% - 710px);top:820px;width:150px;font-size:15px;background:var(--blueS);opacity:.75;color:rgba(20,32,46,.7)">MECHANIZM,<br>NIE PRZYPADEK<small>zgłoszenie naprawa wniosek odpowiedź pętla standard</small></div>
+  <!-- wykresy słupkowe -->
+  <svg class="hide-m" style="left:calc(50% - 690px);top:1000px" width="130" height="80" viewBox="0 0 130 80"><path d="M4 76H126M4 4V76"/><path d="M14 76V48h12v28M34 76V30h12v46M54 76V40h12v36M74 76V18h12v58M94 76V34h12v42"/><path d="M20 44L40 26 60 36 80 14 100 30" stroke="#1F6FA8" opacity=".7"/></svg>
+  <svg class="hide-m" style="left:calc(50% - 700px);top:1420px" width="130" height="80" viewBox="0 0 130 80"><path d="M4 76H126M4 4V76"/><path d="M14 76V40h12v36M34 76V52h12v24M54 76V22h12v54M74 76V44h12v32M94 76V28h12v48"/><path d="M20 36L40 48 60 18 80 40 100 24" stroke="#5BA847" opacity=".8"/></svg>
+  <!-- zębatki -->
+  <svg class="hide-m" style="right:calc(50% - 690px);top:1160px" width="110" height="100" viewBox="0 0 110 100"><g opacity=".6"><g class="gear"><circle cx="40" cy="44" r="22" stroke-dasharray="6 3" stroke-width="5" stroke="#B7BBC2"/><circle cx="40" cy="44" r="6"/></g><g class="gear r"><circle cx="82" cy="72" r="14" stroke-dasharray="4 3" stroke-width="4" stroke="#B7BBC2"/><circle cx="82" cy="72" r="4"/></g></g></svg>
+  <!-- ramki-schematy -->
+  <svg class="hide-m" style="left:calc(50% - 700px);top:1700px" width="140" height="110" viewBox="0 0 140 110"><rect x="2" y="2" width="136" height="106" opacity=".55"/><circle cx="30" cy="54" r="7" opacity=".55"/><circle cx="44" cy="70" r="7" opacity=".55"/><path d="M20 24v10h90M110 24v40" opacity=".55"/></svg>
+  <!-- pionowa linia prowadząca przez całą stronę -->
+  <svg class="hide-m" style="right:calc(50% - 575px);top:760px" width="2" height="560" viewBox="0 0 2 560"><path d="M1 0V560" opacity=".35"/></svg>
+  <!-- na telefonie: tylko dwa słupki z boku -->
+  <div class="bar only-m" style="right:0;top:360px;width:8px;height:180px;background:var(--blueS)"></div>
+  <div class="bar only-m" style="right:8px;top:360px;width:5px;height:180px;background:var(--greenS)"></div>
+</div>
+
+<div class="page">
+
+<div class="top">
+  <a class="brand" href="./"><img src="logo.png" alt="½ JH"><span><b>Druga połowa problemu</b><small>Jarosław Hoc</small></span></a>
+  <div class="motto">Nic nie jest niemożliwe, jeśli policzysz <em>obie połowy.</em><a class="lang" href="about" lang="en">EN</a></div>
+</div>
+
+<section class="head">
+  <div class="left">
+    <p class="kick">Operacje<br>i ludzie</p>
+    <div class="rulet"></div>
+    <p>Ponad trzydzieści lat w produkcji ciągłej: procesy, media, energia, gospodarka wodna, systemy sterowania. Dziś kieruję procesami technologicznymi i energetycznymi w dużym zakładzie branży spożywczej.</p>
+  </div>
+  <div class="portrait"><img src="szkic-hero.jpg" alt="Jarosław Hoc – szkic inżynierski"></div>
+  <div class="right">
+    <span class="qmark">“</span>
+    <blockquote>Rozwiązanie jest policzone, uzgodnione, zatwierdzone — i nie wchodzi. Przyczyna prawie nigdy nie leży po stronie techniki.</blockquote>
+    <div class="sig"><b>JAROSŁAW HOC</b><span>Teksty po polsku i po angielsku.<br>To nie są tłumaczenia.</span></div>
+  </div>
+</section>
+
+<section class="anchor">
+  <h1>Pierwszą połowę problemu umie policzyć <em>każdy inżynier.</em></h1>
+  <div class="byline">PISZĘ O TEJ DRUGIEJ</div>
+</section>
+
+<section class="grid">
+  <div class="card">
+    <span class="lab">KLUCZOWE</span>
+    <ol class="keys">
+      <li><span class="num">1</span><div><h3>Mierz to, co ma się zmienić — nie to, co łatwo policzyć.</h3><p>System pomiaru decyduje, co ludzie zobaczą jako problem, a co przestaną zgłaszać.</p></div></li>
+      <li><span class="num">2</span><div><h3>Ograniczenie nie znika. Przesuwa się.</h3><p>Usunięte w jednym miejscu, wraca w innym — i zmienia gatunek. Nie stoi tam, gdzie jest najgłośniej.</p></div></li>
+      <li><span class="num">3</span><div><h3>Naprawa to jeszcze nie wniosek.</h3><p>Rozwiązanie uruchamiają ludzie. Jeśli im się nie opłaca albo nie słyszą, co z ich zgłoszenia wynikło, pętla się nie zamyka.<span class="hint">Nr 1 · 24 grudnia 2026</span></p></div></li>
+    </ol>
+  </div>
+  <div class="card">
+    <span class="lab">W PRAKTYCE</span>
+    <h3 class="t">4. Od zgłoszenia do wniosku</h3>
+    <p class="s">Pętla zamyka się wtedy, gdy ten, kto zgłosił, słyszy, co z tego wynikło. Ostatni odcinek najczęściej pomijamy.</p>
+    <svg class="loop" viewBox="0 0 300 245" aria-label="Pętla: zgłoszenie, naprawa, wniosek, odpowiedź — odpowiedzi zwykle brakuje">
+      <circle class="ring" cx="150" cy="120" r="96" fill="none" stroke="#8FB4CF" stroke-width="1.2" stroke-dasharray="3 7"/>
+      <g fill="none" stroke="#5BA847" stroke-width="5" stroke-linecap="round">
+        <circle cx="150" cy="120" r="80" stroke-dasharray="69.8 432.8" stroke-dashoffset="-404.9"/>
+        <circle cx="150" cy="120" r="80" stroke-dasharray="69.8 432.8" stroke-dashoffset="-27.9"/>
+        <circle cx="150" cy="120" r="80" stroke-dasharray="69.8 432.8" stroke-dashoffset="-279.3"/>
+      </g>
+      <path d="M122.6 195.2 A80 80 0 0 1 74.8 147.4" fill="none" stroke="#B7BBC2" stroke-width="2" stroke-dasharray="4 5"/>
+      <path class="fill" d="M122.6 195.2 A80 80 0 0 1 74.8 147.4" pathLength="1" fill="none" stroke="#5BA847" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="150" cy="120" r="50" fill="#14202E"/>
+      <text class="mid" x="150" y="116">druga</text><text class="mid" x="150" y="136">połowa</text>
+      <circle class="dot" r="6" fill="#1F6FA8" stroke="#fff" stroke-width="2"/>
+      <g class="lbl"><text x="150" y="18">ZGŁOSZENIE</text><text x="262" y="124">NAPRAWA</text>
+      <text x="150" y="232">WNIOSEK</text><text x="40" y="124">ODPOWIEDŹ</text><text class="miss" x="58" y="196">zwykle brakuje</text></g>
+    </svg>
+  </div>
+</section>
+
+<section class="info">
+  <span class="lab">INFOGRAFIKA</span>
+  <h2>Gdzie gubi się <em>druga połowa</em></h2>
+  <p class="i">Rozwiązanie jest policzone i zatwierdzone. A potem zatrzymuje się w jednym z czterech miejsc — prawie nigdy po stronie techniki.</p>
+  <div class="tiles">
+    <div class="tile"><h4><span class="n">1</span>Pomiar</h4><p>Mierzymy to, co łatwo policzyć. Wskaźnik jest zielony, problem zostaje.</p>
+      <svg viewBox="0 0 120 86"><path d="M14 62a46 46 0 0 1 92 0" fill="none" stroke="#D9DCE1" stroke-width="9"/><path d="M14 62a46 46 0 0 1 46-46" fill="none" stroke="#A9D39A" stroke-width="9"/><path d="M60 16a46 46 0 0 1 46 46" fill="none" stroke="#8FB4CF" stroke-width="9" stroke-dasharray="3 3"/>
+      <line class="needle" x1="60" y1="62" x2="60" y2="24" stroke="#14202E" stroke-width="2.5" stroke-linecap="round"/><circle cx="60" cy="62" r="4" fill="#14202E"/><text x="30" y="80">ŁATWE</text><text x="92" y="80">WAŻNE</text></svg></div>
+    <div class="tile"><h4><span class="n">2</span>Ograniczenie</h4><p>Usuwamy wąskie gardło — i przesuwa się dalej. Nie tam, gdzie jest najgłośniej.</p>
+      <svg viewBox="0 0 120 86"><rect class="st" x="10" y="14" width="26" height="44" rx="3" fill="#D9DCE1"/><rect class="st" x="47" y="14" width="26" height="44" rx="3" fill="#D9DCE1"/><rect class="st" x="84" y="14" width="26" height="44" rx="3" fill="#D9DCE1"/>
+      <line x1="8" y1="70" x2="112" y2="70" stroke="#B7BBC2" stroke-width="1.5"/><circle class="flow" r="4" fill="#1F6FA8"/><circle class="flow b" r="4" fill="#1F6FA8"/><circle class="flow c" r="4" fill="#1F6FA8"/><text x="60" y="84">GARDŁO WĘDRUJE</text></svg></div>
+    <div class="tile"><h4><span class="n">3</span>Co się opłaca</h4><p>Każda zmiana wymaga kolejnej zgody. Ludzie przestają zgłaszać i obchodzą system.</p>
+      <svg viewBox="0 0 120 86"><line x1="8" y1="48" x2="112" y2="48" stroke="#B7BBC2" stroke-width="1.5"/>
+      <rect class="gate" x="36" y="28" width="4" height="34" fill="#B7BBC2"/><rect class="gate g2" x="62" y="28" width="4" height="34" fill="#B7BBC2"/><rect class="gate g3" x="88" y="28" width="4" height="34" fill="#B7BBC2"/>
+      <g class="doc"><rect x="10" y="36" width="16" height="20" rx="2" fill="#fff" stroke="#14202E" stroke-width="1.4"/><path d="M13 42h10M13 46h10M13 50h6" stroke="#14202E" stroke-width="1"/></g><text x="60" y="80">3 ZGODY</text></svg></div>
+    <div class="tile"><h4><span class="n">4</span>Odpowiedź</h4><p>Naprawione, wniosek zapisany. Tylko ten, kto zgłosił, nie słyszy, co z tego wynikło.</p>
+      <svg viewBox="0 0 120 86"><circle cx="24" cy="58" r="8" fill="#14202E"/><path d="M12 80c2-8 6-12 12-12s10 4 12 12" fill="#14202E"/><rect x="82" y="10" width="28" height="22" rx="3" fill="#14202E"/><path d="M88 18h16M88 24h10" stroke="#fff" stroke-width="1.5"/>
+      <path class="up" pathLength="1" d="M34 50 Q60 20 80 22" fill="none" stroke="#1F6FA8" stroke-width="2"/><path class="back" pathLength="1" d="M88 36 Q76 66 38 64" fill="none" stroke="#5BA847" stroke-width="2.5"/>
+      <text class="nope" x="78" y="62" style="fill:#C0392B">… CISZA</text><text class="yes" x="80" y="80" style="fill:#3E8E32">PĘTLA ZAMKNIĘTA</text></svg></div>
+  </div>
+  <div class="takeaway"><div class="b">½</div><div><small>WNIOSEK</small><span>Rozwiązanie działa dopiero wtedy, gdy <em>mierzy właściwą rzecz, trafia w ograniczenie, opłaca się ludziom</em> i <em>wraca odpowiedzią</em> do tego, kto zgłosił.</span></div></div>
+</section>
+
+<section class="bottom">
+  <div class="box"><span class="qmark">“</span><blockquote>Piszę o mechanizmie, nie o przypadku: bez nazw firm, zakładów, dostawców i ludzi.</blockquote><span class="src">— ZASADA PISMA</span></div>
+  <div class="box"><span class="lab">W PONIEDZIAŁEK RANO</span><p>Książki czytane po kolei — razem z tym, z czym się nie zgadzam — i mechanizmy, które widziałem w ruchu. Każdy tekst kończy się jedną rzeczą do zrobienia. Jeśli nie kończy — nie jest skończony.</p></div>
+</section>
+
+<section class="about">
+  <div>
+    <h2>Pierwszy numer</h2>
+    <div class="next"><b>24 GRUDNIA 2026 · WYDANIE ŚWIĄTECZNE</b><span>„Naprawa to jeszcze nie wniosek” — na <a href="https://jaroslawhoc.substack.com">Substacku</a>.</span></div>
+  </div>
+  <div class="contact">
+    <h2>Kontakt</h2>
+    <p>Najprościej mailem: <a href="mailto:kontakt@jaroslawhoc.pl">kontakt@jaroslawhoc.pl</a>.</p>
+  </div>
+</section>
+
+<footer><span class="m">Nic nie jest niemożliwe, jeśli policzysz obie połowy.</span><span>© 2026 Jarosław Hoc · <a href="https://jaroslawhoc.substack.com">Substack</a></span></footer>
+</div>
 <script data-goatcounter="https://jaroslawhoc.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-</body></html>
+</body>
+</html>
