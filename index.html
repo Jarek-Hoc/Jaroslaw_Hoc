@@ -80,7 +80,7 @@ a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--blue)}a:h
 .loop text{font-family:Raleway,sans-serif;font-weight:700;font-size:11px;letter-spacing:.8px;fill:var(--navy);text-anchor:middle}
 .loop .mid{font-family:var(--serif);font-size:17px;font-weight:600;letter-spacing:0;fill:#fff}
 .loop .lbl text{paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round}
-.loop .miss{font-family:var(--serif);font-style:italic;font-weight:400;font-size:12px;fill:#B5651D;letter-spacing:0}
+.loop .miss{font-family:var(--serif);font-style:italic;font-weight:400;font-size:12px;fill:#6B7280;letter-spacing:0}
 .ring{transform-box:fill-box;transform-origin:center;animation:spin 40s linear infinite}
 .dot{offset-path:path("M150 40 A80 80 0 0 1 150 200 A80 80 0 0 1 150 40");animation:run 8s linear infinite}
 .fill{stroke-dasharray:1;stroke-dashoffset:1;animation:close 8s linear infinite}
@@ -109,43 +109,52 @@ footer{margin-top:50px;border-top:1px solid var(--rule);padding:22px 0 40px;colo
 footer .m{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--navy)}
 footer a{border:0;color:var(--gray)}
 
-/* infografika: gdzie gubi się druga połowa */
-.info{margin-top:40px;background:rgba(255,255,255,.94);border:1px solid var(--rule);padding:0 26px 26px;box-shadow:0 10px 30px rgba(20,32,46,.06)}
-.info>h2{font-family:var(--serif);font-weight:600;font-size:30px;color:var(--navy);margin:4px 0 6px;letter-spacing:-.3px;text-transform:none}
-.info>h2 em{font-style:normal;color:var(--blue)}
-.info>p.i{margin:0 0 20px;font-family:var(--serif);font-size:16px;max-width:760px}
-.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.tile{border-radius:6px;padding:16px 16px 14px;border-top:4px solid var(--c)}
-.tile:nth-child(1){--c:var(--blue);background:#EEF4F9}.tile:nth-child(2){--c:#C99A2E;background:#FBF4E4}
-.tile:nth-child(3){--c:var(--navy);background:#F1F2F4}.tile:nth-child(4){--c:var(--green);background:#EFF6EC}
-.tile .n{display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--c);color:#fff;font-weight:700;font-size:14px;align-items:center;justify-content:center;margin-right:8px}
-.tile h4{display:flex;align-items:center;margin:0 0 8px;font-size:14px;letter-spacing:1.2px;text-transform:uppercase;color:var(--navy);line-height:1.25}
-.tile p{margin:0 0 10px;font-family:var(--serif);font-size:15px;line-height:1.45}
-.tile svg{display:block;width:100%;height:auto}
-.tile svg text{font-family:Raleway,sans-serif;font-size:9px;font-weight:700;letter-spacing:.6px;fill:#14202E;text-anchor:middle}
-.takeaway{display:grid;grid-template-columns:54px 1fr;gap:18px;align-items:center;margin-top:18px;padding:16px 20px;background:var(--navy);color:#fff;border-radius:6px}
+/* infografika z tekstu autora */
+.info{margin-top:40px;background:rgba(255,255,255,.95);border:1px solid var(--rule);padding:0 28px 26px;box-shadow:0 10px 30px rgba(20,32,46,.06)}
+.info h2.h{font-family:var(--serif);font-weight:600;font-size:30px;color:var(--navy);margin:4px 0 22px;letter-spacing:-.3px;text-transform:none;line-height:1.2}
+.info h2.h em{font-style:normal;color:var(--blue)}
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;text-align:center;margin-bottom:8px}
+.track{position:absolute;left:12.5%;right:12.5%;top:31px;height:3px;background:var(--rule)}
+.prog{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--green));animation:prog 12s infinite}
+.step{position:relative}
+.step .c{width:64px;height:64px;margin:0 auto 10px;border-radius:50%;background:#fff;border:2px solid var(--navy);display:flex;align-items:center;justify-content:center;transition:none}
+.step .c svg{width:30px;height:30px;fill:none;stroke:var(--navy);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.step b{display:block;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;color:var(--navy)}
+.step small{display:block;font-family:var(--serif);font-size:14px;color:var(--gray);margin-top:2px}
+.s1 .c{animation:on1 12s infinite}.s2 .c{animation:on2 12s infinite}.s3 .c{animation:on3 12s infinite}
+.s4 .c{border-style:dashed;border-color:var(--gray);animation:fail 12s infinite}
+.s4 .no{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--blue);margin-top:4px;opacity:0;animation:no 12s infinite}
+.why{margin:22px 0 12px;font-family:var(--serif);font-size:18px;color:var(--navy);text-align:center}
+.why em{font-style:normal;color:var(--blue)}
+.causes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cause{border:1px solid var(--rule);border-left:4px solid var(--rule);border-radius:4px;padding:14px 16px;background:var(--paper);display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center}
+.cause svg{width:32px;height:32px;fill:none;stroke:var(--gray);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.cause p{margin:0;font-family:var(--serif);font-size:16px;line-height:1.4;color:var(--ink)}
+.k1{animation:c1 12s infinite}.k2{animation:c2 12s infinite}.k3{animation:c3 12s infinite}
+.info .takeaway{display:grid;grid-template-columns:54px 1fr;gap:18px;align-items:center;margin-top:18px;padding:16px 20px;background:var(--navy);color:#fff;border-radius:6px}
 .takeaway .b{width:54px;height:54px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:24px;font-weight:600}
-.takeaway small{display:block;font-size:11px;letter-spacing:2px;color:#9fc6e6;font-weight:700;margin-bottom:2px}
-.takeaway span{font-family:var(--serif);font-size:19px;line-height:1.35}
+.takeaway span{font-family:var(--serif);font-size:20px;line-height:1.35}
 .takeaway em{font-style:normal;color:#A9D39A}
-.needle{transform-origin:60px 62px;animation:needle 4s ease-in-out infinite alternate}
-@keyframes needle{from{transform:rotate(-58deg)}to{transform:rotate(-8deg)}}
-.st{animation:neck 9s infinite}.st:nth-of-type(2){animation-delay:-6s}.st:nth-of-type(3){animation-delay:-3s}
-@keyframes neck{0%,30%{fill:#C99A2E}36%,100%{fill:#D9DCE1}}
-.flow{offset-path:path("M8 70 H112");animation:run 3s linear infinite}.flow.b{animation-delay:-1s}.flow.c{animation-delay:-2s}
-.doc{animation:doc 6s ease-in-out infinite}
-@keyframes doc{0%{transform:translateX(0)}15%,30%{transform:translateX(26px)}45%,60%{transform:translateX(52px)}75%,90%{transform:translateX(78px);opacity:1}100%{transform:translateX(78px);opacity:0}}
-.gate{animation:gate 6s infinite}.gate.g2{animation-delay:1.8s}.gate.g3{animation-delay:3.6s}
-@keyframes gate{0%,10%{fill:#B7BBC2}16%,40%{fill:#C0392B}50%,100%{fill:#B7BBC2}}
-.up{stroke-dasharray:1;stroke-dashoffset:1;animation:up 6s infinite}
-@keyframes up{0%{stroke-dashoffset:1}25%,100%{stroke-dashoffset:0}}
-.back{stroke-dasharray:1;stroke-dashoffset:1;animation:back 6s infinite}
-@keyframes back{0%,55%{stroke-dashoffset:1;opacity:1}80%,95%{stroke-dashoffset:0;opacity:1}100%{opacity:0}}
-.nope{animation:nope 6s infinite}@keyframes nope{0%,25%{opacity:0}30%,52%{opacity:1}56%,100%{opacity:0}}
-.yes{animation:yes 6s infinite}@keyframes yes{0%,78%{opacity:0}82%,96%{opacity:1}100%{opacity:0}}
-@media(max-width:900px){.tiles{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.tiles{grid-template-columns:1fr}.info>h2{font-size:24px}}
-@media(prefers-reduced-motion:reduce){.needle,.st,.flow,.doc,.gate,.up,.back,.nope,.yes{animation:none}.up,.back{stroke-dashoffset:0}.yes{opacity:1}.nope{opacity:0}}
+@keyframes prog{0%{width:0}45%,95%{width:100%}100%{width:0}}
+@keyframes on1{0%,4%{background:#fff;border-color:#14202E}8%,95%{background:#5BA847;border-color:#5BA847}100%{background:#fff;border-color:#14202E}}
+@keyframes on2{0%,17%{background:#fff;border-color:#14202E}21%,95%{background:#5BA847;border-color:#5BA847}100%{background:#fff;border-color:#14202E}}
+@keyframes on3{0%,30%{background:#fff;border-color:#14202E}34%,95%{background:#5BA847;border-color:#5BA847}100%{background:#fff;border-color:#14202E}}
+.s1 .c svg{animation:i1 12s infinite}.s2 .c svg{animation:i2 12s infinite}.s3 .c svg{animation:i3 12s infinite}
+@keyframes i1{0%,4%{stroke:#14202E}8%,95%{stroke:#fff}100%{stroke:#14202E}}
+@keyframes i2{0%,17%{stroke:#14202E}21%,95%{stroke:#fff}100%{stroke:#14202E}}
+@keyframes i3{0%,30%{stroke:#14202E}34%,95%{stroke:#fff}100%{stroke:#14202E}}
+@keyframes fail{0%,44%{transform:none}46%{transform:translateX(-4px)}48%{transform:translateX(4px)}50%{transform:translateX(-3px)}52%,100%{transform:none}}
+@keyframes no{0%,46%{opacity:0}50%,95%{opacity:1}100%{opacity:0}}
+@keyframes c1{0%,56%{border-left-color:#DDD8CC;background:#FAF9F5}60%,95%{border-left-color:#1F6FA8;background:#EEF4F9}100%{border-left-color:#DDD8CC;background:#FAF9F5}}
+@keyframes c2{0%,64%{border-left-color:#DDD8CC;background:#FAF9F5}68%,95%{border-left-color:#1F6FA8;background:#EEF4F9}100%{border-left-color:#DDD8CC;background:#FAF9F5}}
+@keyframes c3{0%,72%{border-left-color:#DDD8CC;background:#FAF9F5}76%,95%{border-left-color:#1F6FA8;background:#EEF4F9}100%{border-left-color:#DDD8CC;background:#FAF9F5}}
+.k1 svg{animation:d1 12s infinite}.k2 svg{animation:d2 12s infinite}.k3 svg{animation:d3 12s infinite}
+@keyframes d1{0%,56%{stroke:#6B7280}60%,95%{stroke:#1F6FA8}100%{stroke:#6B7280}}
+@keyframes d2{0%,64%{stroke:#6B7280}68%,95%{stroke:#1F6FA8}100%{stroke:#6B7280}}
+@keyframes d3{0%,72%{stroke:#6B7280}76%,95%{stroke:#1F6FA8}100%{stroke:#6B7280}}
+@media(max-width:700px){.steps{grid-template-columns:1fr 1fr;row-gap:22px}.track{display:none}.causes{grid-template-columns:1fr}.info h2.h{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.prog,.step .c,.step .c svg,.no,.cause,.cause svg{animation:none!important}.prog{width:100%}.s4 .no{opacity:1}}
+
 @media(max-width:900px){
   .head,.grid,.bottom,.about{grid-template-columns:1fr}
   .portrait{max-width:440px;margin:0 auto}
@@ -247,25 +256,21 @@ footer a{border:0;color:var(--gray)}
 
 <section class="info">
   <span class="lab">INFOGRAFIKA</span>
-  <h2>Gdzie gubi się <em>druga połowa</em></h2>
-  <p class="i">Rozwiązanie jest policzone i zatwierdzone. A potem zatrzymuje się w jednym z czterech miejsc — prawie nigdy po stronie techniki.</p>
-  <div class="tiles">
-    <div class="tile"><h4><span class="n">1</span>Pomiar</h4><p>Mierzymy to, co łatwo policzyć. Wskaźnik jest zielony, problem zostaje.</p>
-      <svg viewBox="0 0 120 86"><path d="M14 62a46 46 0 0 1 92 0" fill="none" stroke="#D9DCE1" stroke-width="9"/><path d="M14 62a46 46 0 0 1 46-46" fill="none" stroke="#A9D39A" stroke-width="9"/><path d="M60 16a46 46 0 0 1 46 46" fill="none" stroke="#8FB4CF" stroke-width="9" stroke-dasharray="3 3"/>
-      <line class="needle" x1="60" y1="62" x2="60" y2="24" stroke="#14202E" stroke-width="2.5" stroke-linecap="round"/><circle cx="60" cy="62" r="4" fill="#14202E"/><text x="30" y="80">ŁATWE</text><text x="92" y="80">WAŻNE</text></svg></div>
-    <div class="tile"><h4><span class="n">2</span>Ograniczenie</h4><p>Usuwamy wąskie gardło — i przesuwa się dalej. Nie tam, gdzie jest najgłośniej.</p>
-      <svg viewBox="0 0 120 86"><rect class="st" x="10" y="14" width="26" height="44" rx="3" fill="#D9DCE1"/><rect class="st" x="47" y="14" width="26" height="44" rx="3" fill="#D9DCE1"/><rect class="st" x="84" y="14" width="26" height="44" rx="3" fill="#D9DCE1"/>
-      <line x1="8" y1="70" x2="112" y2="70" stroke="#B7BBC2" stroke-width="1.5"/><circle class="flow" r="4" fill="#1F6FA8"/><circle class="flow b" r="4" fill="#1F6FA8"/><circle class="flow c" r="4" fill="#1F6FA8"/><text x="60" y="84">GARDŁO WĘDRUJE</text></svg></div>
-    <div class="tile"><h4><span class="n">3</span>Co się opłaca</h4><p>Każda zmiana wymaga kolejnej zgody. Ludzie przestają zgłaszać i obchodzą system.</p>
-      <svg viewBox="0 0 120 86"><line x1="8" y1="48" x2="112" y2="48" stroke="#B7BBC2" stroke-width="1.5"/>
-      <rect class="gate" x="36" y="28" width="4" height="34" fill="#B7BBC2"/><rect class="gate g2" x="62" y="28" width="4" height="34" fill="#B7BBC2"/><rect class="gate g3" x="88" y="28" width="4" height="34" fill="#B7BBC2"/>
-      <g class="doc"><rect x="10" y="36" width="16" height="20" rx="2" fill="#fff" stroke="#14202E" stroke-width="1.4"/><path d="M13 42h10M13 46h10M13 50h6" stroke="#14202E" stroke-width="1"/></g><text x="60" y="80">3 ZGODY</text></svg></div>
-    <div class="tile"><h4><span class="n">4</span>Odpowiedź</h4><p>Naprawione, wniosek zapisany. Tylko ten, kto zgłosił, nie słyszy, co z tego wynikło.</p>
-      <svg viewBox="0 0 120 86"><circle cx="24" cy="58" r="8" fill="#14202E"/><path d="M12 80c2-8 6-12 12-12s10 4 12 12" fill="#14202E"/><rect x="82" y="10" width="28" height="22" rx="3" fill="#14202E"/><path d="M88 18h16M88 24h10" stroke="#fff" stroke-width="1.5"/>
-      <path class="up" pathLength="1" d="M34 50 Q60 20 80 22" fill="none" stroke="#1F6FA8" stroke-width="2"/><path class="back" pathLength="1" d="M88 36 Q76 66 38 64" fill="none" stroke="#5BA847" stroke-width="2.5"/>
-      <text class="nope" x="78" y="62" style="fill:#C0392B">… CISZA</text><text class="yes" x="80" y="80" style="fill:#3E8E32">PĘTLA ZAMKNIĘTA</text></svg></div>
+  <h2 class="h">Policzone, uzgodnione, zatwierdzone — <em>i nie wchodzi.</em></h2>
+  <div class="steps">
+    <div class="track"><div class="prog"></div></div>
+    <div class="step s1"><div class="c"><svg viewBox="0 0 32 32"><rect x="7" y="4" width="18" height="24" rx="2"/><path d="M10 9h12M11 15h2M16 15h2M21 15h0M11 20h2M16 20h2M11 24h2M16 24h2M21 20v4"/></svg></div><b>Policzone</b><small>projekt i liczby</small></div>
+    <div class="step s2"><div class="c"><svg viewBox="0 0 32 32"><circle cx="11" cy="10" r="4"/><circle cx="21" cy="10" r="4"/><path d="M3 26c1-5 4-8 8-8 2 0 3.6.7 5 2 1.4-1.3 3-2 5-2 4 0 7 3 8 8"/></svg></div><b>Uzgodnione</b><small>z ludźmi</small></div>
+    <div class="step s3"><div class="c"><svg viewBox="0 0 32 32"><path d="M8 28h16M10 24h12l-1-5h-10z"/><path d="M13 19c0-4-3-6-3-10a6 6 0 0 1 12 0c0 4-3 6-3 10"/></svg></div><b>Zatwierdzone</b><small>budżet i podpis</small></div>
+    <div class="step s4"><div class="c"><svg viewBox="0 0 32 32" style="stroke:#6B7280"><path d="M12 9l12 7-12 7z"/></svg></div><b>Wchodzi?</b><div class="no">nie wchodzi</div></div>
   </div>
-  <div class="takeaway"><div class="b">½</div><div><small>WNIOSEK</small><span>Rozwiązanie działa dopiero wtedy, gdy <em>mierzy właściwą rzecz, trafia w ograniczenie, opłaca się ludziom</em> i <em>wraca odpowiedzią</em> do tego, kto zgłosił.</span></div></div>
+  <p class="why">Przyczyna prawie nigdy nie leży po stronie techniki. <em>Leży w tym:</em></p>
+  <div class="causes">
+    <div class="cause k1"><svg viewBox="0 0 32 32"><path d="M5 24a11 11 0 1 1 22 0"/><path d="M16 24l6-8"/><circle cx="16" cy="24" r="1.5"/></svg><p>jak zbudowany jest system pomiaru,</p></div>
+    <div class="cause k2"><svg viewBox="0 0 32 32"><path d="M4 9h24M4 23h24"/><path d="M11 9c0 7 10 7 10 14M21 9c0 7-10 7-10 14"/></svg><p>gdzie naprawdę stoi ograniczenie,</p></div>
+    <div class="cause k3"><svg viewBox="0 0 32 32"><circle cx="11" cy="11" r="4"/><circle cx="22" cy="12" r="3"/><path d="M3 26c1-5 4-8 8-8s7 3 8 8M18 25c.6-3.6 2.4-6 5-6s4 2 5 6"/></svg><p>co się opłaca ludziom, którzy mają to uruchomić.</p></div>
+  </div>
+  <div class="takeaway"><div class="b">½</div><span>To jest ta <em>druga połowa problemu.</em> Pierwszą umie policzyć każdy inżynier.</span></div>
 </section>
 
 <section class="bottom">
