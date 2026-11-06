@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.png?v=1791019325" type="image/png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
-:root{--navy:#14202E;--blue:#1F6FA8;--blueS:#8FB4CF;--green:#5BA847;--greenS:#A9D39A;--amber:#E9CF8F;--ink:#2B2F36;--gray:#6B7280;--line:#8A8F98;--rule:#DDD8CC;--paper:#FAF9F5;--serif:"Source Serif 4",Georgia,serif}
+:root{--navy:#14202E;--blue:#1F6FA8;--blueS:#8FB4CF;--green:#4A90C2;--greenS:#C4DAEA;--amber:#E9CF8F;--ink:#2B2F36;--gray:#6B7280;--line:#8A8F98;--rule:#DDD8CC;--paper:#FAF9F5;--serif:"Source Serif 4",Georgia,serif}
 *{box-sizing:border-box}
 html{background:var(--paper)}
 body{margin:0;color:var(--ink);font-family:Raleway,system-ui,sans-serif;font-size:17px;line-height:1.6;position:relative;overflow-x:hidden;
@@ -115,7 +115,7 @@ footer a{border:0;color:var(--gray)}
 .info h2.h em{font-style:normal;color:var(--blue)}
 .steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;text-align:center;margin-bottom:8px}
 .track{position:absolute;left:12.5%;right:12.5%;top:31px;height:3px;background:var(--rule)}
-.prog{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--green));animation:prog 12s infinite}
+.prog{height:100%;width:0;background:linear-gradient(90deg,#8FB4CF,#1F6FA8);animation:prog 12s infinite}
 .step{position:relative}
 .step .c{width:64px;height:64px;margin:0 auto 10px;border-radius:50%;background:#fff;border:2px solid var(--navy);display:flex;align-items:center;justify-content:center;transition:none}
 .step .c svg{width:30px;height:30px;fill:none;stroke:var(--navy);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
@@ -134,11 +134,11 @@ footer a{border:0;color:var(--gray)}
 .info .takeaway{display:grid;grid-template-columns:54px 1fr;gap:18px;align-items:center;margin-top:18px;padding:16px 20px;background:var(--navy);color:#fff;border-radius:6px}
 .takeaway .b{width:54px;height:54px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:24px;font-weight:600}
 .takeaway span{font-family:var(--serif);font-size:20px;line-height:1.35}
-.takeaway em{font-style:normal;color:#A9D39A}
+.takeaway em{font-style:normal;color:#9FC6E6}
 @keyframes prog{0%{width:0}45%,95%{width:100%}100%{width:0}}
-@keyframes on1{0%,4%{background:#fff;border-color:#14202E}8%,95%{background:#5BA847;border-color:#5BA847}100%{background:#fff;border-color:#14202E}}
-@keyframes on2{0%,17%{background:#fff;border-color:#14202E}21%,95%{background:#5BA847;border-color:#5BA847}100%{background:#fff;border-color:#14202E}}
-@keyframes on3{0%,30%{background:#fff;border-color:#14202E}34%,95%{background:#5BA847;border-color:#5BA847}100%{background:#fff;border-color:#14202E}}
+@keyframes on1{0%,4%{background:#fff;border-color:#14202E}8%,95%{background:#1F6FA8;border-color:#1F6FA8}100%{background:#fff;border-color:#14202E}}
+@keyframes on2{0%,17%{background:#fff;border-color:#14202E}21%,95%{background:#1F6FA8;border-color:#1F6FA8}100%{background:#fff;border-color:#14202E}}
+@keyframes on3{0%,30%{background:#fff;border-color:#14202E}34%,95%{background:#1F6FA8;border-color:#1F6FA8}100%{background:#fff;border-color:#14202E}}
 .s1 .c svg{animation:i1 12s infinite}.s2 .c svg{animation:i2 12s infinite}.s3 .c svg{animation:i3 12s infinite}
 @keyframes i1{0%,4%{stroke:#14202E}8%,95%{stroke:#fff}100%{stroke:#14202E}}
 @keyframes i2{0%,17%{stroke:#14202E}21%,95%{stroke:#fff}100%{stroke:#14202E}}
@@ -185,7 +185,7 @@ footer a{border:0;color:var(--gray)}
   <div class="note hide-m" style="right:calc(50% - 710px);top:820px;width:150px;font-size:15px;background:var(--blueS);opacity:.75;color:rgba(20,32,46,.7)">MECHANIZM,<br>NIE PRZYPADEK<small>zgłoszenie naprawa wniosek odpowiedź pętla standard</small></div>
   <!-- wykresy słupkowe -->
   <svg class="hide-m" style="left:calc(50% - 690px);top:1000px" width="130" height="80" viewBox="0 0 130 80"><path d="M4 76H126M4 4V76"/><path d="M14 76V48h12v28M34 76V30h12v46M54 76V40h12v36M74 76V18h12v58M94 76V34h12v42"/><path d="M20 44L40 26 60 36 80 14 100 30" stroke="#1F6FA8" opacity=".7"/></svg>
-  <svg class="hide-m" style="left:calc(50% - 700px);top:1420px" width="130" height="80" viewBox="0 0 130 80"><path d="M4 76H126M4 4V76"/><path d="M14 76V40h12v36M34 76V52h12v24M54 76V22h12v54M74 76V44h12v32M94 76V28h12v48"/><path d="M20 36L40 48 60 18 80 40 100 24" stroke="#5BA847" opacity=".8"/></svg>
+  <svg class="hide-m" style="left:calc(50% - 700px);top:1420px" width="130" height="80" viewBox="0 0 130 80"><path d="M4 76H126M4 4V76"/><path d="M14 76V40h12v36M34 76V52h12v24M54 76V22h12v54M74 76V44h12v32M94 76V28h12v48"/><path d="M20 36L40 48 60 18 80 40 100 24" stroke="#4A90C2" opacity=".8"/></svg>
   <!-- zębatki -->
   <svg class="hide-m" style="right:calc(50% - 690px);top:1160px" width="110" height="100" viewBox="0 0 110 100"><g opacity=".6"><g class="gear"><circle cx="40" cy="44" r="22" stroke-dasharray="6 3" stroke-width="5" stroke="#B7BBC2"/><circle cx="40" cy="44" r="6"/></g><g class="gear r"><circle cx="82" cy="72" r="14" stroke-dasharray="4 3" stroke-width="4" stroke="#B7BBC2"/><circle cx="82" cy="72" r="4"/></g></g></svg>
   <!-- ramki-schematy -->
@@ -238,16 +238,16 @@ footer a{border:0;color:var(--gray)}
     <p class="s">Pętla zamyka się wtedy, gdy ten, kto zgłosił, słyszy, co z tego wynikło. Ostatni odcinek najczęściej pomijamy.</p>
     <svg class="loop" viewBox="0 0 300 245" aria-label="Pętla: zgłoszenie, naprawa, wniosek, odpowiedź — odpowiedzi zwykle brakuje">
       <circle class="ring" cx="150" cy="120" r="96" fill="none" stroke="#8FB4CF" stroke-width="1.2" stroke-dasharray="3 7"/>
-      <g fill="none" stroke="#5BA847" stroke-width="5" stroke-linecap="round">
+      <g fill="none" stroke="#4A90C2" stroke-width="5" stroke-linecap="round">
         <circle cx="150" cy="120" r="80" stroke-dasharray="69.8 432.8" stroke-dashoffset="-404.9"/>
         <circle cx="150" cy="120" r="80" stroke-dasharray="69.8 432.8" stroke-dashoffset="-27.9"/>
         <circle cx="150" cy="120" r="80" stroke-dasharray="69.8 432.8" stroke-dashoffset="-279.3"/>
       </g>
       <path d="M122.6 195.2 A80 80 0 0 1 74.8 147.4" fill="none" stroke="#B7BBC2" stroke-width="2" stroke-dasharray="4 5"/>
-      <path class="fill" d="M122.6 195.2 A80 80 0 0 1 74.8 147.4" pathLength="1" fill="none" stroke="#5BA847" stroke-width="5" stroke-linecap="round"/>
+      <path class="fill" d="M122.6 195.2 A80 80 0 0 1 74.8 147.4" pathLength="1" fill="none" stroke="#1F6FA8" stroke-width="5" stroke-linecap="round"/>
       <circle cx="150" cy="120" r="50" fill="#14202E"/>
       <text class="mid" x="150" y="116">druga</text><text class="mid" x="150" y="136">połowa</text>
-      <circle class="dot" r="6" fill="#1F6FA8" stroke="#fff" stroke-width="2"/>
+      <circle class="dot" r="6" fill="#14202E" stroke="#fff" stroke-width="2"/>
       <g class="lbl"><text x="150" y="18">ZGŁOSZENIE</text><text x="262" y="124">NAPRAWA</text>
       <text x="150" y="232">WNIOSEK</text><text x="40" y="124">ODPOWIEDŹ</text><text class="miss" x="58" y="196">zwykle brakuje</text></g>
     </svg>
